@@ -39,7 +39,7 @@ O link só existe **depois** de publicares uma vez (é gerado pelo Streamlit). F
 
 1. Conta em [share.streamlit.io](https://share.streamlit.io) com o mesmo GitHub do repo.  
 2. **New app** → escolhe o repositório → **Main file:** `app.py` → **Branch:** `main`.  
-3. **Secrets** (recomendado): colar `RCAP_DEMO = "1"` para forçar modo planilhas (sem MySQL).  
+3. **Secrets** (recomendado): colar exatamente `RCAP_DEMO = "1"` (o Cloud não coloca isto em `os.environ` sozinho; o código lê `st.secrets`).  
 4. **Deploy**. No fim copias o URL e colas no email / formulário.
 
 O repo já inclui `pyproject.toml` com `-e .` no `requirements.txt` para o Cloud instalar o pacote `rcap_fundos` sem `PYTHONPATH` manual.
