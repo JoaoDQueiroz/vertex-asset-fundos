@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="360" viewBox="0 0 880 360">
+  <rect width="880" height="360" fill="#E6E1D8"/>
+  <rect x="24" y="20" width="832" height="48" rx="6" fill="#004850"/>
+  <text x="44" y="52" fill="#E6E1D8" font-family="Segoe UI, sans-serif" font-size="18" font-weight="600">Vertex Asset · Fundos</text>
+  <rect x="24" y="84" width="200" height="36" rx="4" fill="#00363C"/>
+  <rect x="232" y="84" width="200" height="36" rx="4" fill="#004850"/>
+  <rect x="440" y="84" width="200" height="36" rx="4" fill="#004850"/>
+  <rect x="648" y="84" width="200" height="36" rx="4" fill="#004850"/>
+  <text x="124" y="108" fill="#fff" font-family="Segoe UI, sans-serif" font-size="12" text-anchor="middle">Caixa</text>
+  <text x="332" y="108" fill="#fff" font-family="Segoe UI, sans-serif" font-size="12" text-anchor="middle">Assembleias</text>
+  <text x="540" y="108" fill="#fff" font-family="Segoe UI, sans-serif" font-size="12" text-anchor="middle">Cadastro</text>
+  <text x="748" y="108" fill="#fff" font-family="Segoe UI, sans-serif" font-size="12" text-anchor="middle">Saldo CC</text>
+  <rect x="24" y="140" width="560" height="196" rx="6" fill="#fff" stroke="#99946A" stroke-width="1"/>
+  <rect x="600" y="140" width="256" height="92" rx="6" fill="#fff" stroke="#99946A" stroke-width="1"/>
+  <rect x="600" y="244" width="256" height="92" rx="6" fill="#fff" stroke="#99946A" stroke-width="1"/>
+  <text x="44" y="172" fill="#004850" font-family="Segoe UI, sans-serif" font-size="13" font-weight="600">Indicadores + tabelas</text>
+  <text x="44" y="196" fill="#555" font-family="Segoe UI, sans-serif" font-size="11">Métricas agregadas, gráficos por fundo/admin, relatórios com totais.</text>
+  <text x="620" y="176" fill="#004850" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">KPIs</text>
+  <text x="620" y="280" fill="#004850" font-family="Segoe UI, sans-serif" font-size="12" font-weight="600">Filtros</text>
+  <text x="620" y="302" fill="#555" font-family="Segoe UI, sans-serif" font-size="11">Data, multiselect fundos</text>
+</svg>

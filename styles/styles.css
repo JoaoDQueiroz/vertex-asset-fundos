@@ -1,0 +1,317 @@
+body {
+    background-color: #E6E1D8;
+    color: #004850;
+    font-family: 'Segoe UI', 'Rubik', sans-serif;
+}
+
+h1, h2, h3, h4 {
+    color: #004850;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Sidebar */
+section[data-testid="stSidebar"] {
+    background-color: #004850 !important;
+    padding: 2rem 1rem;
+    color: #ffffff;
+}
+
+.sidebar .sidebar-content {
+    background-color: #004850 !important;
+    padding: 20px;
+}
+
+.sidebar-divider {
+    height: 1px;
+    background-color: #99946A;
+    margin: 1rem 0;
+    opacity: 0.5;
+}
+
+.logo-container {
+    padding: 0 0 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-r-cap {
+    border-radius: 4px;
+    max-width: 100%;
+    height: auto;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.card-metrica {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 240px;
+    min-width: 200px;
+    transition: 0.2s ease-in-out;
+    border-left: 5px solid #99946A;
+}
+
+.card-metrica:hover {
+    transform: scale(1.03);
+}
+
+.card-metrica h4.card-title {
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #004850;
+    text-transform: uppercase;
+}
+
+.card-metrica p.card-value {
+    font-size: 26px;
+    font-weight: bold;
+    margin: 0;
+    color: #00363C;
+}
+
+.tooltip {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: help;
+    font-size: 16px;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 160px;
+    background-color: #004850;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    top: -5px;
+    right: 105%;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tabela-fluxo {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    font-size: 0.9rem;
+}
+
+.tabela-fluxo th {
+    background-color: #004850;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+}
+
+.tabela-fluxo td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tabela-fluxo tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+.tabela-fluxo tr:nth-child(odd) {
+    background-color: #F4F1EA;
+}
+
+.tabela-fluxo tr:hover {
+    background-color: #B8DDD1;
+}
+
+.col-saldo {
+    background-color: #E6E1D8;
+    color: #00363C;
+    font-weight: bold;
+}
+
+/* Container principal */
+.block-container {
+    background-color: #E6E1D8 !important;
+    padding: 2rem 2rem;
+}
+
+/* Inputs dentro da sidebar */
+section[data-testid="stSidebar"] .st-emotion-cache-1cypcdb,
+section[data-testid="stSidebar"] .st-emotion-cache-1y4p8pa,
+section[data-testid="stSidebar"] .st-emotion-cache-19rxjzo,
+section[data-testid="stSidebar"] .st-emotion-cache-1vbkxwb {
+    background-color: #F4F1EA !important;
+    color: #00363C !important;
+    border: 1px solid #99946A !important;
+    border-radius: 6px !important;
+    box-shadow: none !important;
+}
+
+/* Rótulos dos campos da sidebar */
+section[data-testid="stSidebar"] label {
+    color: #ffffff !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 0.2rem;
+}
+
+/* Textos internos dos inputs */
+section[data-testid="stSidebar"] input,
+section[data-testid="stSidebar"] .css-1d391kg {
+    background-color: #F4F1EA !important;
+    color: #00363C !important;
+}
+
+/* Bloco pai dos inputs (cor externa dos cards) */
+section[data-testid="stSidebar"] .st-emotion-cache-1v0mbdj,
+section[data-testid="stSidebar"] .st-emotion-cache-1r6slb0 {
+    background-color: #F4F1EA !important;
+    border: 1px solid #99946A !important;
+    border-radius: 10px !important;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+/* Corrige background padrão branco */
+section[data-testid="stSidebar"] .st-emotion-cache-1fcb1xv,
+section[data-testid="stSidebar"] .st-emotion-cache-1djdx63 {
+    background-color: #F4F1EA !important;
+}
+
+/* Legibilidade do texto e links */
+a {
+    color: #004850;
+}
+
+a:hover {
+    color: #00363C;
+    text-decoration: underline;
+}
+
+/* Títulos com detalhe dourado claro */
+h2::after, h3::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background-color: #99946A;
+    margin-top: 4px;
+    border-radius: 2px;
+}
+
+/* Botões personalizados de navegação */
+.nav-button {
+    background-color: #004850;
+    color: white;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 6px;
+    font-weight: 600;
+    width: 100%;
+    margin-bottom: 0px;
+    text-align: left;
+    transition: background-color 0.3s ease;
+    line-height: 1.2;
+    display: block;
+}
+.nav-button:hover {
+    background-color: #00363C;
+    cursor: pointer;
+}
+.nav-button.selected {
+    background-color: #00363C !important;
+    color: #ffffff !important;
+    font-weight: bold;
+}
+
+/* Ajuste da setinha de collapse */
+section[data-testid="stSidebar"] [data-testid="stSidebarCollapseControl"] svg {
+    color: #ffffff !important;
+}
+
+/* Ajusta a largura do campo de data do Streamlit */
+div[data-testid="stDateInput"] > div {
+    max-width: 150px;
+    min-width: 140px;
+}
+
+/* Força o cabeçalho das tabelas do Streamlit em negrito e com fundo levemente destacado */
+.stDataFrame thead tr th {
+    font-weight: bold !important;
+    background-color: #f5f5f5 !important;
+}
+
+/* --- NAVIGATION BUTTONS SIDEBAR --- */
+section[data-testid="stSidebar"] .stButton > button {
+    text-align: left !important;
+    justify-content: flex-start !important;
+    padding: 8px 18px !important;
+    font-weight: 600 !important;
+    background-color: #004850 !important;
+    color: #fff !important;
+    border-radius: 6px !important;
+    margin-bottom: 6px !important;
+    transition: background-color 0.3s;
+    width: 100% !important;
+    border: none !important;
+    font-size: 1rem !important;
+}
+section[data-testid="stSidebar"] .stButton > button:hover {
+    background-color: #00363C !important;
+    color: #fff !important;
+}
+section[data-testid="stSidebar"] .stButton button[kind="primary"] {
+    background-color: #00363C !important;
+    color: #ffffff !important;
+    font-weight: bold !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+section[data-testid="stSidebar"] .stButton button[kind="primary"]:hover {
+    background-color: #00363C !important;
+    color: #ffffff !important;
+}
+section[data-testid="stSidebar"] .sidebar-section {
+    margin-bottom: 20px !important;
+    margin-top: 20px !important;
+    color: #fff !important;
+}
+section[data-testid="stSidebar"] div[data-testid="stVerticalBlock"] > div > div {
+    gap: 0px !important;
+}
+section[data-testid="stSidebar"] div[data-testid="stVerticalBlock"] {
+    gap: 0px !important;
+}
+
+section[data-testid="stSidebar"] .sidebar-env-note {
+    font-size: 0.72rem;
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.88);
+    margin: 0.35rem 0 0.15rem 0;
+    padding: 0.4rem 0 0 0.55rem;
+    border-left: 2px solid rgba(201, 169, 98, 0.85);
+}
