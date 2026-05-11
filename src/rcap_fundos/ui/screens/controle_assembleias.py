@@ -92,7 +92,7 @@ def main(*_):
             return ""
 
         st.dataframe(
-            df.style.apply(zebra_linhas, axis=1).applymap(destaque_status, subset=["STATUS"] if "STATUS" in df.columns else None),
+            df.style.apply(zebra_linhas, axis=1).map(destaque_status, subset=["STATUS"] if "STATUS" in df.columns else None),
             use_container_width=True,
             height=min(38 + 35 * len(df), 800),
         )

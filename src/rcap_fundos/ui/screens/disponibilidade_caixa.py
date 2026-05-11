@@ -169,7 +169,7 @@ def main(*_):
         altura = 38 + 35 * linhas
         st.dataframe(
             df_rel.style.format(formatar_moeda, subset=["SALDO_CC", "APLICACOES_RF", "DESPESAS", "DISPONIBILIDADE"])
-            .applymap(colorir_valores, subset=["SALDO_CC", "APLICACOES_RF", "DESPESAS", "DISPONIBILIDADE"])
+            .map(colorir_valores, subset=["SALDO_CC", "APLICACOES_RF", "DESPESAS", "DISPONIBILIDADE"])
             .apply(zebra_linhas, axis=1)
             .apply(destaque_total, axis=1)
             .apply(destaque_coluna_total, axis=0)
@@ -208,7 +208,7 @@ def main(*_):
         altura = 38 + 35 * linhas
         st.dataframe(
             df_limpo.style.format(formatar_moeda, subset=["SALDO_CC", "APLICACOES_RF", "DESPESAS", "DISPONIBILIDADE"])
-            .applymap(colorir_valores, subset=["SALDO_CC", "APLICACOES_RF", "DESPESAS", "DISPONIBILIDADE"])
+            .map(colorir_valores, subset=["SALDO_CC", "APLICACOES_RF", "DESPESAS", "DISPONIBILIDADE"])
             .apply(zebra_linhas, axis=1)
             .apply(destaque_total, axis=1)
             .apply(destaque_coluna_total, axis=0)
@@ -238,7 +238,7 @@ def main(*_):
         altura = 38 + 35 * linhas
         st.dataframe(
             df_detalhe.style.format(formatar_moeda, subset=col_desp_detail + ["TOTAL_DESPESAS"])
-            .applymap(colorir_valores, subset=col_desp_detail + ["TOTAL_DESPESAS"])
+            .map(colorir_valores, subset=col_desp_detail + ["TOTAL_DESPESAS"])
             .apply(zebra_linhas, axis=1)
             .apply(destaque_total, axis=1)
             .apply(destaque_coluna_total, axis=0)
@@ -272,7 +272,7 @@ def main(*_):
         altura = 38 + 35 * linhas
         st.dataframe(
             df_limpo.style.format(formatar_moeda, subset=col_despesas_ok + ["TOTAL_DESPESAS"])
-            .applymap(colorir_valores, subset=col_despesas_ok + ["TOTAL_DESPESAS"])
+            .map(colorir_valores, subset=col_despesas_ok + ["TOTAL_DESPESAS"])
             .apply(zebra_linhas, axis=1)
             .apply(destaque_total, axis=1)
             .apply(destaque_coluna_total, axis=0)
@@ -302,7 +302,7 @@ def main(*_):
         altura = 38 + 35 * linhas
         st.dataframe(
             df_pend.style.format(formatar_moeda, subset=col_despesas_pend + ["TOTAL_DESPESAS"])
-            .applymap(colorir_valores, subset=col_despesas_pend + ["TOTAL_DESPESAS"])
+            .map(colorir_valores, subset=col_despesas_pend + ["TOTAL_DESPESAS"])
             .apply(zebra_linhas, axis=1)
             .apply(destaque_total, axis=1)
             .apply(destaque_coluna_total, axis=0)

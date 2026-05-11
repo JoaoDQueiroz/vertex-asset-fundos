@@ -93,7 +93,7 @@ def main(*_):
     st.dataframe(
         df_diff.style.apply(zebra_linhas, axis=1)
         .format(formatar_moeda, subset=col_saldos + col_diff)
-        .applymap(colorir_diff, subset=col_diff),
+        .map(colorir_diff, subset=col_diff),
         use_container_width=True,
         height=min(38 + 35 * len(df_diff), 800),
     )
