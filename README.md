@@ -2,10 +2,6 @@
 
 Painel único para ver **posição de caixa**, **cadastro de fundos**, **assembleias** e **variação de saldo em CC** — com filtros, totais, indicadores por janela de tempo (1M / 3M / 6M) e leitura por administrador. Os dados deste repositório são **sintéticos** (adequado para portfólio e revisão de código).
 
-![Visão geral das áreas](docs/readme_assets/overview.svg)
-
-*Opcional: substituir por captura real em `docs/readme_assets/dashboard.png`.*
-
 ---
 
 ## O que o repositório mostra
@@ -66,7 +62,3 @@ Ver `.env.example` — `RCAP_DEMO=0` e variáveis `MYSQL_*` para ambiente privad
 ## Estrutura
 
 `app.py` · `src/rcap_fundos/` (UI + núcleo) · `styles/` · `imagens/` · `tests/`
-
-## Partilhar o projeto
-
-GitHub/GitLab (link no email), **Streamlit Cloud** com este repo e `requirements.txt`, ou **Docker** numa máquina com acesso controlado.
