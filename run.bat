@@ -29,7 +29,6 @@ if errorlevel 1 (
   exit /b 1
 )
 
-set "PYTHONPATH=%CD%\src;%PYTHONPATH%"
 set "RCAP_DEMO=1"
 
 echo.

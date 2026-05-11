@@ -27,12 +27,22 @@ Painel único para ver **posição de caixa**, **cadastro de fundos**, **assembl
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 pip install -r requirements.txt
-$env:PYTHONPATH = "$PWD\src"
 $env:RCAP_DEMO = "1"
 python -m streamlit run app.py
 ```
 
 Abre o URL que o Streamlit indicar (em geral `http://localhost:8501`).
+
+## URL público (Streamlit Cloud)
+
+O link só existe **depois** de publicares uma vez (é gerado pelo Streamlit). Formato típico: `https://NOME-QUE-ESCOLHERES.streamlit.app`
+
+1. Conta em [share.streamlit.io](https://share.streamlit.io) com o mesmo GitHub do repo.  
+2. **New app** → escolhe o repositório → **Main file:** `app.py` → **Branch:** `main`.  
+3. **Secrets** (recomendado): colar `RCAP_DEMO = "1"` para forçar modo planilhas (sem MySQL).  
+4. **Deploy**. No fim copias o URL e colas no email / formulário.
+
+O repo já inclui `pyproject.toml` com `-e .` no `requirements.txt` para o Cloud instalar o pacote `rcap_fundos` sem `PYTHONPATH` manual.
 
 ## Docker
 
@@ -46,8 +56,9 @@ Ficheiros em `demo_data/`. Regenerar: `python scripts/build_demo_xlsx.py`.
 
 ## Testes
 
+Com dependências instaladas (`pip install -r requirements.txt`):
+
 ```powershell
-$env:PYTHONPATH = "$PWD\src"
 pytest tests/
 ```
 

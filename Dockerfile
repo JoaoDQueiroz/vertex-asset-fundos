@@ -2,7 +2,8 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-COPY requirements.txt .
+COPY pyproject.toml requirements.txt ./
+COPY src ./src
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY app.py .
@@ -10,9 +11,7 @@ COPY demo_data ./demo_data
 COPY imagens ./imagens
 COPY styles ./styles
 COPY scripts ./scripts
-COPY src ./src
 
-ENV PYTHONPATH=/app/src
 ENV RCAP_DEMO=1
 
 EXPOSE 8501
