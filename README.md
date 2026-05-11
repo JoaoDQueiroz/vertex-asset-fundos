@@ -1,41 +1,31 @@
-# Vertex Asset · Fundos (Streamlit)
+# Vertex Asset · Fundos
 
-Painel interno para acompanhar posição de caixa por fundo, cadastro, assembleias e variação de saldo em CC em janelas de data. Pensado para operações que precisam cruzar saldo, rubricas de despesa e cadastro sem sair de um único fluxo.
+Painel único para ver **posição de caixa**, **cadastro de fundos**, **assembleias** e **variação de saldo em CC** — com filtros, totais, indicadores por janela de tempo (1M / 3M / 6M) e leitura por administrador. Os dados deste repositório são **sintéticos** (adequado para portfólio e revisão de código).
 
-Contexto do envio: processo na **Amazon Transportes** (base na Vila Maria, São Paulo — transporte/logística, não varejo nem AWS).
+![Visão geral das áreas](docs/readme_assets/overview.svg)
 
-![Esquema das áreas do painel](docs/readme_assets/overview.svg)
-
-**O que entra no repo**
-
-| Área | Função |
-|------|--------|
-| Disponibilidade de caixa | Data + fundos; janela 1M/3M/6M com métricas e donut por administrador; abas de relatório e despesa. |
-| Assembleias | Eventos deserializados de JSON, com filtros e leitura por status. |
-| Cadastro de fundos | Grade com filtros; segunda aba só com colunas de taxas. |
-| Saldo em conta corrente | Duas datas mais recentes, diferença por fundo, exportação Excel. |
-
-**Stack**
-
-Streamlit + Pandas + Plotly (donut). A vaga cita Angular/Node: o case prioriza dados e leitura de negócio; em entrevista cruzas com JS se fizer sentido.
-
-## Publicar para revisão
-
-- **Git**: push para GitHub/GitLab (público ou privado com convite) + link no email/candidatura.
-- **Streamlit Community Cloud**: liga o repo, `requirements.txt`, sem secrets se mantiveres só `RCAP_DEMO=1` e `demo_data/` no repositório.
-- **Docker**: `docker compose up --build` numa máquina acessível na rede da empresa ou exposta com o controlo de segurança que eles exigirem.
-- **Zip**: anexar o mesmo conteúdo do repo com instruções do README.
-- **Reunião**: `run.bat` ou `streamlit run` + partilha de ecrã.
-
-`pytest` e Docker não são obrigatórios para abrir o app no dia a dia; convém mantê-los no envio se a avaliação incluir código e reprodutibilidade.
+*Opcional: substituir por captura real em `docs/readme_assets/dashboard.png`.*
 
 ---
 
-## Execução local (Windows)
+## O que o repositório mostra
 
-`run.bat` — cria `.venv` se precisar, instala dependências, `RCAP_DEMO=1`, arranca o Streamlit com `demo_data/`.
+| Módulo | Utilidade |
+|--------|-----------|
+| Disponibilidade de caixa | Referência por data e fundos; métricas agregadas; donut por administrador; relatórios e despesa detalhada. |
+| Assembleias | Linha de eventos a partir de JSON, com filtros por status e prazos. |
+| Cadastro de fundos | Grade consultável e aba de taxas. |
+| Saldo em CC | Comparação entre as duas datas mais recentes e exportação Excel. |
 
-PowerShell:
+**Tecnologia:** Python, Streamlit, Pandas e Plotly (gráfico circular).
+
+---
+
+## Como executar (depois de clonar)
+
+**Windows:** duplo clique em `run.bat` (cria `.venv` se precisar, instala dependências, usa `demo_data/`).
+
+**PowerShell:**
 
 ```powershell
 python -m venv .venv
@@ -46,17 +36,17 @@ $env:RCAP_DEMO = "1"
 python -m streamlit run app.py
 ```
 
-## Docker (opcional)
+Abre o URL que o Streamlit indicar (em geral `http://localhost:8501`).
+
+## Docker
 
 ```bash
 docker compose up --build
 ```
 
-Serviço em `http://localhost:8501`. Variável `RCAP_DEMO=1` já vem no compose.
+## Dados de demonstração
 
-## Dados
-
-Planilhas em `demo_data/` com nomes fixos. Regenerar: `python scripts/build_demo_xlsx.py`.
+Ficheiros em `demo_data/`. Regenerar: `python scripts/build_demo_xlsx.py`.
 
 ## Testes
 
@@ -67,18 +57,16 @@ pytest tests/
 
 ## LGPD
 
-Dados sintéticos; não há titulares identificáveis nem operações reais. Não versionar `.env` com credenciais nem extracts de produção.
+Sem dados pessoais nem operações reais. Não commits com `.env` com segredos nem extracts de produção.
 
 ## MySQL (opcional)
 
-`.env.example` → `.env` com `MYSQL_*` e `RCAP_DEMO=0` se quiseres apontar a uma base privada.
+Ver `.env.example` — `RCAP_DEMO=0` e variáveis `MYSQL_*` para ambiente privado.
 
-## Árvore relevante
+## Estrutura
 
-- `app.py` — entrada
-- `src/rcap_fundos/ui/` — ecrãs e sidebar
-- `src/rcap_fundos/core/` — cálculos, demo, MySQL opcional
-- `tests/` — pytest sobre lógica de caixa
-- `styles/`, `imagens/`
+`app.py` · `src/rcap_fundos/` (UI + núcleo) · `styles/` · `imagens/` · `tests/`
 
-Substituir o SVG por captura real: gravar `docs/readme_assets/dashboard.png` e trocar a linha do `![...]` no topo deste ficheiro.
+## Partilhar o projeto
+
+GitHub/GitLab (link no email), **Streamlit Cloud** com este repo e `requirements.txt`, ou **Docker** numa máquina com acesso controlado.
